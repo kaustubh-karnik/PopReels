@@ -41,11 +41,19 @@ export async function POST(request: NextRequest) {
             transformation: {
                 height: 1920,
                 width: 1080,
-                quality: body?.transformation?.quality ?? 100,
+                quality: body?.transformation?.quality ?? 80,
             },
         };
         const newVideo = await Video.create(videoData);
 
+        return NextResponse.json(
+            {
+                success: true,
+                message: "Video saved successfully",
+                video: newVideo,
+            },
+            { status: 201 }
+        );
 
     } catch (error) {
         console.error("Error creating video:", error);

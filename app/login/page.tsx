@@ -8,6 +8,7 @@ import { Input } from "@/components/retroui/Input";
 import { Label } from "@/components/retroui/Label";
 import { Card } from "@/components/retroui/Card";
 import Link from "next/link";
+import Image from "next/image";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -43,13 +44,19 @@ function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="font-head text-5xl font-bold mb-2">Welcome Back! 👋</h1>
-          <p className="text-muted-foreground text-lg font-head">Login to your account</p>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 flex items-center justify-center bg-background p-4">
+        <div className="w-full max-w-md">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white rounded-2xl p-4 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <Image src="/logo-bg.png" alt="PopReels Logo" width={120} height={0} className="w-28 h-auto object-contain" />
+              </div>
+            </div>
+            <h1 className="font-head text-5xl font-bold mb-2">Welcome Back!</h1>
+            <p className="text-muted-foreground text-lg font-head">Login to your account</p>
+          </div>
 
         {/* Login Card */}
         <Card className="w-full">
@@ -160,9 +167,10 @@ function LoginPage() {
           </Card.Content>
         </Card>
 
-        {/* Footer */}
+        {/* Note */}
         <div className="mt-8 text-center text-sm text-muted-foreground">
           <p className="font-head">Secure login powered by NextAuth</p>
+        </div>
         </div>
       </div>
     </div>

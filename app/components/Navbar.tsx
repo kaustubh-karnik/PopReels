@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
@@ -26,8 +27,11 @@ export default function Navbar() {
           <div className="flex justify-between h-16 items-center">
             {/* Logo/Brand */}
             <div className="flex-shrink-0">
-              <Link href="/home">
-                <span className="text-2xl font-bold font-mono text-black">
+              <Link href="/home" className="flex items-center gap-3">
+                <div className="bg-red-500 h-auto border-2 rounded-xl border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <Image src="/logo-bg.png" alt="PopReels Logo" width={100} height={800} className="rounded-xl object-contain" priority />
+                </div>
+                <span className="text-3xl font-bold font-mono text-black">
                   PopReels
                 </span>
               </Link>

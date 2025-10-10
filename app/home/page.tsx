@@ -310,18 +310,6 @@ export default function HomePage() {
           </div>
         )}
       </div>
-
-      {/* Footer */}
-      <footer className="border-t-4 border-black mt-20 py-8 bg-secondary text-secondary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-head text-lg">
-            Made with ❤️ by PopReel Team
-          </p>
-          <p className="font-head text-sm mt-2 opacity-75">
-            © 2025 PopReel. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

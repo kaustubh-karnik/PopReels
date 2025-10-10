@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Archivo_Black, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 import Providers from "./components/Providers";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,9 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} ${spaceGrotesk.variable} antialiased flex flex-col min-h-screen`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="flex-grow">{children}</div>
+          <Footer />
+        </Providers>
+        <Toaster position="bottom-right" richColors />
       </body>
     </html>
   );
